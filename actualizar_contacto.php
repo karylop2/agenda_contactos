@@ -18,6 +18,7 @@ $nombre   = trim($_POST['nombre'] ?? '');
 $telefono = trim($_POST['telefono'] ?? '');
 $correo   = trim($_POST['correo'] ?? '');
 $ciudad   = trim($_POST['ciudad'] ?? '');
+$favorito = isset($_POST['favorito']) ? 1 : 0;0 ;
 
 // valida los datos 
 $errores = [];
@@ -44,8 +45,8 @@ if (!empty($errores)) {
 // actualiza si el contacto es del usuario registrado
 $id_usuario = $_SESSION['id_usuario'];
 
-$actualizar = $conexion->prepare("UPDATE contactos SET nombre = ?, telefono = ?, correo = ?, ciudad = ? WHERE id = ? AND id_usuario = ?");
-$actualizar->bind_param("ssssii", $nombre, $telefono, $correo, $ciudad, $id, $id_usuario);
+$actualizar = $conexion->prepare("UPDATE contactos SET nombre = ?, telefono = ?, correo = ?, ciudad = ?, favorito = ? WHERE id = ? AND id_usuario = ?");
+$actualizar->bind_param("ssssiii", $nombre, $telefono, $correo, $ciudad, $favorito, $id, $id_usuario, );
 $actualizar->execute();
 
 

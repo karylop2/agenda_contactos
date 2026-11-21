@@ -11,12 +11,14 @@ $token = obtener_token();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo contacto</title>
     <link href="css/estilos.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -38,7 +40,8 @@ $token = obtener_token();
 
                         <div class="mb-3">
                             <label for="telefono" class="form-label">Teléfono:</label>
-                            <input type="tel" name="telefono" id="telefono" class="form-control" maxlength="20" required>
+                            <input type="tel" name="telefono" id="telefono" class="form-control" maxlength="20"
+                                required>
                         </div>
 
                         <div class="mb-3">
@@ -49,6 +52,10 @@ $token = obtener_token();
                         <div class="mb-3">
                             <label for="ciudad" class="form-label">Ciudad:</label>
                             <input type="text" name="ciudad" id="ciudad" class="form-control" maxlength="100" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" name="favorito" id="favorito" value="1" class="form-check-input">
+                            <label for="favorito" class="form-check-label">Marcar como favorito ★</label>
                         </div>
 
                         <div class="d-grid gap-2 mt-4">
@@ -61,4 +68,5 @@ $token = obtener_token();
         </div>
     </div>
 </body>
+
 </html>
